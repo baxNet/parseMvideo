@@ -9,6 +9,7 @@ import time
 from tqdm import tqdm
 
 import csv
+import os
 
 all_product_ids = []
 all_products = []
@@ -111,6 +112,7 @@ async def main():
 
     with open('table.json', 'w', encoding='utf-8') as f:
         json.dump(table, f, indent=4, ensure_ascii=False)
+        print("Файл table.json успешно записан в корневой каталог проекта")
 
             
 
@@ -290,6 +292,7 @@ async def parse_first_stage(session, json_data):
 
 
 if __name__ == '__main__':
+    os.makedirs('result', exist_ok=True)
     asyncio.run(main())
     array_to_csv(table, 'result/notebooks.csv')
     
