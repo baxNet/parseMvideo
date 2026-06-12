@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+venv/
+result/*.csv
+result/*.json
